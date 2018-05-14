@@ -1,0 +1,19 @@
+{
+    "devtools_port": 9090,
+    "startup_app": {
+        "name": "IG OpenFin Browser",
+        "description": "OpenFin Demo Apps",
+        "url": "http://localhost:4200",
+        "uuid": "OpenfinPOC-yy3n14jaam",
+        "autoShow": true
+    },
+    "runtime": {
+        "arguments": "--enable-experimental-web-platform-features",
+        "version": "beta"
+    },
+    "shortcut": {
+        "company": "OpenFin",
+        "description": "Openfin POC",
+        "name": "Openfin POC"
+    }
+}

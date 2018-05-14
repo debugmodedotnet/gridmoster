@@ -1,0 +1,26 @@
+<p>IgxGrid with optional sorting, filtering and editing features.<br />
+Active features: Sorting,Filtering,Editing,Summaries,Resizing,Row Selection,Paging,Column Pinning</p>
+<igx-grid #grid1 [data]="localData" width="900px" height="550px" [rowSelectable]="true" [paging]="true">
+  <igx-column field="FirstName" header="First Name"  width="150px" [sortable]="true" [filterable]="true" [editable]="true" [resizable]="true" [pinned]="true" [hasSummary]="true">
+  </igx-column>
+  <igx-column field="LastName" header="Last Name" width="150px" [sortable]="true" [filterable]="true" [editable]="true" [resizable]="true" [pinned]="true">
+  </igx-column>
+  <igx-column field="Country" width="140px" [sortable]="true" [filterable]="true" [editable]="true" [resizable]="true" [hasSummary]="true">
+  </igx-column>
+  <igx-column field="Age" width="110px" dataType="number" [sortable]="true" [filterable]="true" [editable]="true" [resizable]="true" [hasSummary]="true">
+  </igx-column>
+  <igx-column field="RegistererDate" header="Registerer Date" width="180px" dataType="date" [sortable]="true" [filterable]="true" [editable]="true" [resizable]="true">
+    <ng-template igxCell let-value>
+        {{ value | date }}
+    </ng-template>
+      <ng-template igxCellEditor let-cell="cell">
+        <igx-datePicker cancelButtonLabel="cancel" todayButtonLabel="today" [(ngModel)]="cell.value" (onOpen)="pickerOpen()" (onClose)="pickerClose()">
+        </igx-datePicker>
+      </ng-template>
+  </igx-column>
+	<igx-column field="IsActive" header="Is Active" width="140px" dataType="boolean" [sortable]="true" [filterable]="true" [resizable]="true">
+    <ng-template igxCell let-cell="cell">
+      <igx-checkbox [ngModel]="cell.value" (ngModelChange)="cell.update($event)"></igx-checkbox>
+    </ng-template>
+  </igx-column>
+</igx-grid>
