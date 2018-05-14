@@ -1,5 +1,5 @@
-//import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-//import { employeesData } from './localData';
+// import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+// import { employeesData } from './localData';
 // new imports
 import { Component, OnInit, ViewChild , AfterViewInit ,   NgZone,
   OnDestroy } from '@angular/core';
@@ -11,19 +11,19 @@ import { IgxGridComponent } from 'igniteui-angular/grid/grid.component';
 @Component({
   selector: 'app-grid1',
   templateUrl: './grid1.component.html',
-  styleUrls: ['./grid1.component.css']
+  styleUrls: ['./grid1.component.scss']
 })
 export class Grid1Component implements OnInit, AfterViewInit , OnDestroy {
-  //public localData: any[];
-  //title = 'grid1';
-  //constructor() { }
+  // public localData: any[];
+  // title = 'grid1';
+  // constructor() { }
 
-  //ngOnInit() {
+  // ngOnInit() {
   //  this.localData = employeesData;
  // }
 
 // pasted from app.component.ts
- //title = 'Trade Blotter CDS';
+ // title = 'Trade Blotter CDS';
  rows: number;
  columns: number;
  rowsCount = 1200;
@@ -78,7 +78,7 @@ buysellarrayindex: number;
  rebindgrid() {
    this.localData = Array.from(this.localData2);
   // this.localData = this.localData2;
-   this.localData1 = this.getMoreData(this.rowsCount-1200);
+   this.localData1 = this.getMoreData(this.rowsCount -1200);
    this.localData = this.localData.concat(this.localData1);
    this.grid.data = this.localData;
    this.grid.markForCheck();
