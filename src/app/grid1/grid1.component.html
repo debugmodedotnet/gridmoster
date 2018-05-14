@@ -18,7 +18,7 @@
 
 <div class="people-config" *ngIf='_live' >
 <label igxLabel for="slider">DataGrid Updating per - {{persec}} MiliSecond</label>
-<igx-slider  id="slider" (onValueChange)='persecvaluechange($event)' [minValue]="10" [maxValue]="500" [step]="10" [(ngModel)]="persec"></igx-slider>
+<igx-slider  id="slider" (onValueChange)='persecvaluechange($event)'  [minValue]="300" [maxValue]="1500" [step]="10" [(ngModel)]="persec"></igx-slider>
 </div>
     
     <igx-grid [width]="'1172px'" (onSelection)="handleRowSelection($event)" #grid1 id="grid1" [rowHeight]="30"  [data]="localData" [height]="'600px'" [autoGenerate]="false">
@@ -47,7 +47,7 @@
       
       <igx-column width="75px" field="Coupon"  dataType="number" sortable="true" header="Progress">
           <ng-template igxCell let-val>
-              <igx-linear-bar width="200px" [textVisibility]="true" class="cell__inner_2"  [value]="val"></igx-linear-bar>
+              <igx-linear-bar [animate]="false"  width="200px" [textVisibility]="true" class="cell__inner_2"  [value]="val"></igx-linear-bar>
           </ng-template>
       </igx-column>
       <igx-column width="150" field="" header="Actions" dataType="string">

@@ -32,7 +32,7 @@ export class Grid1Component implements OnInit, AfterViewInit , OnDestroy {
  localData2: BankEntity[] = [];
  private _live = false;
  private _timer;
- persec = 10;
+ persec = 300;
  selectedTicker: string;
  buysellarray = [
    'Buy',
